@@ -1,0 +1,1886 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPI Recount Text - MTs. Negeri 1 Boalemo</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Amiri -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- html2pdf.js CDN for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <!-- Tone.js for Sound Effects & BGM -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        amiri: ['Amiri', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .glass-dark {
+            background: rgba(6, 78, 59, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #10b981;
+            border-radius: 4px;
+        }
+        .pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @media print {
+            .no-print { display: none !important; }
+            .print-only { display: block !important; }
+            body { background: white; color: black; }
+        }
+    </style>
+</head>
+<body class="bg-slate-900 font-sans text-slate-800 min-h-screen flex items-center justify-center p-2 sm:p-4 select-none">
+
+    <!-- MAIN CONTAINER -->
+    <div id="appContainer" class="w-full max-w-5xl bg-slate-100 rounded-3xl shadow-2xl overflow-hidden relative min-h-[650px] flex flex-col border border-emerald-500/20">
+
+        <!-- English Learning Themed Background -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden opacity-[0.03] z-0 text-slate-900">
+            <i class="fa-solid fa-map-location-dot absolute top-10 left-10 text-9xl"></i>
+            <i class="fa-solid fa-book absolute top-40 right-20 text-8xl"></i>
+            <i class="fa-solid fa-language absolute bottom-20 left-32 text-8xl"></i>
+            <i class="fa-solid fa-spell-check absolute bottom-40 right-40 text-7xl"></i>
+            <div class="absolute top-1/2 left-1/4 text-4xl font-serif font-bold">Past Tense</div>
+            <div class="absolute top-1/4 right-1/3 text-4xl font-serif font-bold">Oxford Dictionary</div>
+            <div class="absolute bottom-1/3 left-1/2 text-4xl font-serif font-bold">V1, V2, V3</div>
+            <div class="absolute top-3/4 left-10 text-4xl font-serif font-bold">Grammar Rules</div>
+            <i class="fa-brands fa-monero absolute top-1/3 left-2/3 text-9xl"></i>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 1. SPLASH SCREEN                           -->
+        <!-- ========================================== -->
+        <div id="splashScreen" class="flex-1 bg-slate-900 flex flex-col justify-center items-center p-6 text-white relative z-50 transition-opacity duration-700">
+            <div class="w-32 h-32 mb-6 relative animate-bounce">
+                <div class="absolute inset-0 bg-emerald-500/20 rounded-full blur-xl"></div>
+                <svg class="w-full h-full relative z-10 drop-shadow-2xl" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="30" y="40" width="140" height="120" rx="16" fill="#047857" stroke="#10B981" stroke-width="4"/>
+                    <path d="M45 65H155M45 90H125M45 115H140" stroke="#E2E8F0" stroke-width="6" stroke-linecap="round"/>
+                    <circle cx="145" cy="125" r="18" fill="#F59E0B"/>
+                    <path d="M140 125L143 128L150 121" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-black tracking-widest text-emerald-400 mb-2 animate-pulse text-center">RECOUNT TEXT</h1>
+            <p class="text-slate-400 text-sm sm:text-base text-center">Memuat Media Interaktif...</p>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 2. COVER SCREEN                            -->
+        <!-- ========================================== -->
+        <div id="coverScreen" class="hidden flex-1 bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900 flex flex-col justify-between p-6 sm:p-10 relative overflow-hidden text-white">
+            <!-- Background Decorative SVGs -->
+            <div class="absolute top-0 right-0 -mt-10 -mr-10 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 -mb-10 -ml-10 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <!-- Top Header Badge -->
+            <div class="flex justify-between items-center z-10">
+                <span class="bg-emerald-800/60 border border-emerald-600/50 text-emerald-200 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full flex items-center gap-2">
+                    <i class="fa-solid fa-graduation-cap text-amber-400"></i> Bahasa Inggris | Kelas IX / Fase D
+                </span>
+                <span class="bg-amber-500/20 border border-amber-500/40 text-amber-300 text-xs font-medium px-3 py-1 rounded-full">
+                    KBC Kemenag RI
+                </span>
+            </div>
+
+            <!-- Center Visual & Main Title -->
+            <div class="my-auto text-center flex flex-col items-center z-10 py-6">
+                <!-- Dynamic Interactive Visual SVG -->
+                <div class="w-40 h-40 sm:w-48 sm:h-48 mb-6 relative group">
+                    <div class="absolute inset-0 bg-emerald-500/20 rounded-full blur-xl group-hover:bg-emerald-500/30 transition-all"></div>
+                    <svg class="w-full h-full relative z-10 drop-shadow-2xl" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="30" y="40" width="140" height="120" rx="16" fill="#047857" stroke="#10B981" stroke-width="4"/>
+                        <path d="M45 65H155M45 90H125M45 115H140" stroke="#E2E8F0" stroke-width="6" stroke-linecap="round"/>
+                        <circle cx="145" cy="125" r="18" fill="#F59E0B"/>
+                        <path d="M140 125L143 128L150 121" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M160 40L170 30M175 45L185 45M165 60L175 70" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                </div>
+
+                <h1 class="text-4xl sm:text-6xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-amber-200 to-emerald-100 mb-3">
+                    RECOUNT TEXT
+                </h1>
+                <p class="text-slate-300 text-base sm:text-lg max-w-xl font-light leading-relaxed">
+                    Exploring Past Experiences & Historical Moments through Literacy, Loving Nature, and Quranic Wisdom.
+                </p>
+            </div>
+
+            <!-- Bottom Action Buttons -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 z-10 max-w-3xl mx-auto w-full">
+                <button onclick="openModal('developerModal')" class="bg-slate-800/80 hover:bg-slate-700/80 border border-slate-600 text-slate-200 font-semibold py-3 px-4 rounded-xl text-sm transition-all shadow-md hover:shadow-emerald-900/30 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-user-gear text-amber-400"></i> Informasi Pengembang
+                </button>
+                <button onclick="openModal('learningGoalModal')" class="bg-slate-800/80 hover:bg-slate-700/80 border border-slate-600 text-slate-200 font-semibold py-3 px-4 rounded-xl text-sm transition-all shadow-md hover:shadow-emerald-900/30 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-bullseye text-emerald-400"></i> Tujuan Pembelajaran
+                </button>
+                <button onclick="goToIdentityScreen()" class="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-bold py-3 px-6 rounded-xl text-base shadow-lg shadow-emerald-600/40 hover:scale-105 transition-all flex items-center justify-center gap-2 sm:col-span-1">
+                    MULAI <i class="fa-solid fa-circle-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- FLOATING MODALS (COVER SCREEN)             -->
+        <!-- ========================================== -->
+        <!-- Developer Modal -->
+        <div id="developerModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+            <div class="bg-slate-900 border border-emerald-500/30 rounded-2xl p-6 sm:p-8 max-w-md w-full shadow-2xl relative text-slate-200">
+                <button onclick="closeModal('developerModal')" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="text-center">
+                    <div class="relative w-28 h-28 mx-auto mb-4">
+                        <img src="https://iili.io/nbZct1t.jpg" alt="Zulkifli Mantulangi" onerror="this.onerror=null; this.src='https://placehold.co/150x150/047857/FFFFFF?text=ZM';" class="w-full h-full object-cover rounded-full border-4 border-amber-400 shadow-xl">
+                        <div class="absolute bottom-0 right-0 bg-emerald-600 text-white rounded-full p-2 border-2 border-slate-900">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-1">Zulkifli Mantulangi, S.S., Gr.</h3>
+                    <p class="text-emerald-400 font-medium text-sm mb-4">Guru Bahasa Inggris & Pengembang Media</p>
+                    <div class="space-y-2 text-left bg-slate-800/60 p-4 rounded-xl border border-slate-700/60 text-xs sm:text-sm">
+                        <p class="flex items-center gap-3"><i class="fa-solid fa-school text-amber-400 w-5"></i> <span><strong>Madrasah:</strong> MTs. Negeri 1 Boalemo</span></p>
+                        <p class="flex items-center gap-3"><i class="fa-solid fa-location-dot text-emerald-400 w-5"></i> <span><strong>Wilayah:</strong> Boalemo, Prov. Gorontalo</span></p>
+                        <p class="flex items-center gap-3"><i class="fa-solid fa-envelope text-sky-400 w-5"></i> <span><strong>Email:</strong> zulmantulangi@gmail.com</span></p>
+                    </div>
+                    <button onclick="closeModal('developerModal')" class="mt-6 w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-2.5 rounded-xl text-sm transition-all">
+                        Kembali ke Cover
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Learning Goals Modal -->
+        <div id="learningGoalModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+            <div class="bg-slate-900 border border-emerald-500/30 rounded-2xl p-6 sm:p-8 max-w-xl w-full shadow-2xl relative text-slate-200 max-h-[90vh] overflow-y-auto custom-scrollbar">
+                <button onclick="closeModal('learningGoalModal')" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white">Tujuan Pembelajaran</h3>
+                        <p class="text-xs text-emerald-400">Fase D - Kelas IX (Recount Text)</p>
+                    </div>
+                </div>
+                <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700/70 text-sm leading-relaxed mb-4">
+                    Peserta didik mampu menganalisis alur cerita serta menemukan informasi tersurat dan tersirat dari recount text tulis atau multimodal tentang topik sehari-hari/minat mereka, lalu memberikan respons kontekstual yang tepat.
+                </div>
+                
+                <!-- KBC & Ayat Integration Card -->
+                <div class="bg-gradient-to-r from-emerald-950 to-slate-800 p-4 rounded-xl border border-emerald-600/40 mb-4">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Integrasi Al-Qur'an (QS. Yusuf: 111)</span>
+                        <i class="fa-solid fa-quran text-emerald-400"></i>
+                    </div>
+                    <p class="font-amiri text-right text-lg sm:text-xl text-amber-200 mb-2 leading-loose">
+                        لَقَدْ كَانَ فِي قَصَصِهِمْ عِبْرَةٌ لِّأُولِي الْأَلْبَابِ
+                    </p>
+                    <p class="text-xs text-slate-300 italic mb-2">
+                        "Sungguh, pada kisah-kisah mereka itu terdapat pelajaran bagi orang yang berakal." (QS. Yusuf: 111 - Kemenag RI)
+                    </p>
+                    <p class="text-xs text-emerald-300">
+                        <strong>Hikmah KBC:</strong> Melalui Recount Text, kita mempelajari sejarah & pengalaman hidup untuk menumbuhkan cinta ilmu, kebaikan, dan kelestarian ciptaan Allah.
+                    </p>
+                </div>
+
+                <button onclick="closeModal('learningGoalModal')" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-2.5 rounded-xl text-sm transition-all">
+                    Kembali ke Cover
+                </button>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 3. STUDENT IDENTITY FORM SCREEN            -->
+        <!-- ========================================== -->
+        <div id="identityScreen" class="hidden flex-1 bg-slate-900 flex flex-col justify-center items-center p-6 text-white relative">
+            <div class="max-w-md w-full bg-slate-800/90 border border-emerald-500/30 rounded-2xl p-6 sm:p-8 shadow-2xl relative">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-3 text-2xl border border-emerald-500/40">
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white">Identitas Peserta Didik</h2>
+                    <p class="text-xs text-slate-400 mt-1">Masukkan data diri Anda sebelum memulai media pembelajaran</p>
+                </div>
+
+                <form id="identityForm" onsubmit="saveStudentIdentity(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-medium text-emerald-300 mb-1">Nama Lengkap Siswa</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+                                <i class="fa-solid fa-user"></i>
+                            </span>
+                            <input type="text" id="studentName" required placeholder="Contoh: Ahmad Raihan" class="w-full pl-10 pr-4 py-2.5 bg-slate-900/90 border border-slate-700 rounded-xl text-white text-sm focus:outline-none focus:border-emerald-500">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-emerald-300 mb-1">Kelas / Rombel</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+                                <i class="fa-solid fa-users-rectangle"></i>
+                            </span>
+                            <select id="studentClass" required class="w-full pl-10 pr-4 py-2.5 bg-slate-900/90 border border-slate-700 rounded-xl text-white text-sm focus:outline-none focus:border-emerald-500">
+                                <option value="">-- Pilih Kelas --</option>
+                                <option value="IX-B">IX-B</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Custom Alert Message -->
+                    <div id="identityError" class="hidden p-3 bg-red-900/50 border border-red-500/50 text-red-200 text-xs rounded-xl flex items-center gap-2">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <span>Mohon isi nama lengkap dan pilih kelas Anda terlebih dahulu!</span>
+                    </div>
+
+                    <button type="submit" class="w-full mt-2 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-bold py-3 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 text-sm">
+                        Lanjut ke Panduan <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 4. GUIDE SLIDES SCREEN                     -->
+        <!-- ========================================== -->
+        <div id="guideScreen" class="hidden flex-1 bg-slate-900 flex flex-col justify-between p-6 sm:p-10 text-white relative">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-4">
+                <div>
+                    <h2 class="text-xl font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-compass text-emerald-400"></i> Panduan & Pengantar
+                    </h2>
+                    <p class="text-xs text-emerald-400" id="welcomeUserText">Selamat Datang, Siswa!</p>
+                </div>
+                <span class="text-xs bg-emerald-950 text-emerald-400 border border-emerald-700 px-3 py-1 rounded-full font-mono" id="guideStepBadge">
+                    Slide 1 dari 3
+                </span>
+            </div>
+
+            <!-- Guide Slide Content Holder -->
+            <div id="guideContent" class="my-auto py-6">
+                <!-- Slide 1 -->
+                <div class="guide-slide space-y-4">
+                    <div class="w-14 h-14 bg-emerald-500/20 text-emerald-400 rounded-2xl flex items-center justify-center text-2xl border border-emerald-500/30">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-emerald-300">Struktur Belajar Bertahap</h3>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                        Aplikasi MPI Recount Text ini dirancang dengan alur pembelajaran terkunci bertahap (Sequential Locking). Anda wajib menuntaskan menu <strong>BELAJAR</strong> untuk membuka menu <strong>BERMAIN</strong>, dan menyelesaikan tantangan bermain untuk membuka menu <strong>BERLATIH</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Guide Navigation Controls -->
+            <div class="flex justify-between items-center pt-4 border-t border-slate-800">
+                <button id="prevGuideBtn" onclick="changeGuideSlide(-1)" class="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl text-sm font-semibold transition-all border border-slate-700 flex items-center gap-2">
+                    <i class="fa-solid fa-chevron-left"></i> Kembali
+                </button>
+                <button id="nextGuideBtn" onclick="changeGuideSlide(1)" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-sm font-semibold transition-all shadow-md flex items-center gap-2">
+                    Selanjutnya <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 5. MAIN DASHBOARD MENU SCREEN              -->
+        <!-- ========================================== -->
+        <div id="dashboardScreen" class="hidden flex-1 bg-slate-900 flex flex-col justify-between p-6 sm:p-8 text-white relative">
+            <!-- Header User Profile Bar -->
+            <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-4 flex flex-wrap justify-between items-center gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-gradient-to-tr from-emerald-600 to-amber-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-md">
+                        <span id="userInitials">S</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white text-base leading-tight" id="dashStudentName">Nama Siswa</h3>
+                        <p class="text-xs text-emerald-400" id="dashStudentClass">Kelas IX-1</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 bg-slate-900/60 px-4 py-2 rounded-xl border border-slate-700/50 text-xs">
+                    <i class="fa-solid fa-award text-amber-400 text-sm"></i>
+                    <span>Status Kunci: <strong id="lockStatusText" class="text-emerald-300">Belajar Terbuka</strong></span>
+                </div>
+            </div>
+
+            <!-- Title & Subtitle -->
+            <div class="my-4 text-center">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-amber-200">
+                    MENU UTAMA LEARNING MODULE
+                </h2>
+                <p class="text-slate-400 text-xs sm:text-sm mt-1">Pilih tahapan belajar Anda secara berurutan</p>
+            </div>
+
+            <!-- 3 Main Menu Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 my-auto">
+                <!-- Card 1: BELAJAR -->
+                <div onclick="openMenu('belajar')" class="cursor-pointer bg-slate-800/90 hover:bg-slate-800 border-2 border-emerald-500 rounded-2xl p-6 flex flex-col justify-between transition-all hover:scale-105 shadow-xl group">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-14 h-14 bg-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white rounded-2xl flex items-center justify-center text-2xl transition-all border border-emerald-500/40">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+                            <i class="fa-solid fa-lock-open text-xs"></i> TERBUKA
+                        </span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-all mb-1">1. BELAJAR</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">6 Slide Materi Mendalam + Integrasi Gorontalo, KBC & Ayat Al-Qur'an.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-700/60 flex items-center justify-between text-xs font-semibold text-emerald-400">
+                        <span>Mulai Materi</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+
+                <!-- Card 2: BERMAIN -->
+                <div id="cardBermain" onclick="tryOpenMenu('bermain')" class="cursor-pointer bg-slate-800/40 border-2 border-slate-700 opacity-75 rounded-2xl p-6 flex flex-col justify-between transition-all hover:border-amber-500/50 shadow-lg group relative">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-14 h-14 bg-slate-700/50 text-slate-400 group-hover:text-amber-400 rounded-2xl flex items-center justify-center text-2xl transition-all border border-slate-600" id="iconBermain">
+                            <i class="fa-solid fa-gamepad"></i>
+                        </div>
+                        <span id="badgeBermain" class="bg-slate-700 text-slate-300 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+                            <i class="fa-solid fa-lock text-xs"></i> TERKUNCI
+                        </span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-300 group-hover:text-white transition-all mb-1">2. BERMAIN</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">10 Tantangan Gamifikasi Literasi & Numerasi (100-200 Kata).</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-700/60 flex items-center justify-between text-xs font-semibold text-slate-400" id="footerBermain">
+                        <span>Selesaikan Belajar</span>
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                </div>
+
+                <!-- Card 3: BERLATIH -->
+                <div id="cardBerlatih" onclick="tryOpenMenu('berlatih')" class="cursor-pointer bg-slate-800/40 border-2 border-slate-700 opacity-75 rounded-2xl p-6 flex flex-col justify-between transition-all hover:border-emerald-500/50 shadow-lg group relative">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-14 h-14 bg-slate-700/50 text-slate-400 group-hover:text-emerald-400 rounded-2xl flex items-center justify-center text-2xl transition-all border border-slate-600" id="iconBerlatih">
+                            <i class="fa-solid fa-pen-ruler"></i>
+                        </div>
+                        <span id="badgeBerlatih" class="bg-slate-700 text-slate-300 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+                            <i class="fa-solid fa-lock text-xs"></i> TERKUNCI
+                        </span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-300 group-hover:text-white transition-all mb-1">3. BERLATIH</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">10 Soal Asesmen Berjenjang Level 1, 2, & 3 HOTS + Unduh Laporan PDF.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-700/60 flex items-center justify-between text-xs font-semibold text-slate-400" id="footerBerlatih">
+                        <span>Selesaikan Bermain</span>
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Info -->
+            <div class="text-center text-xs text-slate-500 mt-4">
+                MPI Recount Text &copy; 2026 - Zulkifli Mantulangi, S.S., Gr. (MTs. Negeri 1 Boalemo)
+            </div>
+        </div>
+
+        <!-- Modal Dialog Locked Notification -->
+        <div id="lockedNoticeModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+            <div class="bg-slate-900 border border-amber-500/40 rounded-2xl p-6 max-w-sm w-full text-center text-white shadow-2xl">
+                <div class="w-16 h-16 bg-amber-500/20 text-amber-400 rounded-full flex items-center justify-center mx-auto mb-3 text-3xl border border-amber-500/30">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-1">Menu Masih Terkunci!</h3>
+                <p class="text-xs text-slate-300 mb-5" id="lockedModalMsg">Anda harus merampungkan tahapan sebelumnya terlebih dahulu.</p>
+                <button onclick="closeModal('lockedNoticeModal')" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold py-2.5 rounded-xl text-sm transition-all">
+                    Saya Mengerti
+                </button>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 6. LAYER MENU 1: BELAJAR (6 SLIDES)        -->
+        <!-- ========================================== -->
+        <div id="belajarScreen" class="hidden flex-1 bg-slate-900 flex flex-col justify-between p-4 sm:p-8 text-white relative">
+            <!-- Header Bar -->
+            <div class="flex justify-between items-center border-b border-slate-800 pb-3 relative z-10">
+                <button onclick="returnToDashboard()" class="text-xs text-slate-300 hover:text-white bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700 flex items-center gap-1.5">
+                    <i class="fa-solid fa-house"></i> Menu Utama
+                </button>
+                <span class="text-xs text-emerald-400 font-semibold bg-emerald-950 border border-emerald-700 px-3 py-1 rounded-full" id="belajarSlideBadge">
+                    Slide 1 / 6
+                </span>
+            </div>
+            
+            <!-- Running Text -->
+            <marquee scrollamount="5" class="border-b border-slate-800/50 relative z-10 py-2 text-xs sm:text-sm text-emerald-300 font-bold tracking-widest">
+                English is FUN!! 🚀 Keep learning and exploring the world!
+            </marquee>
+
+            <!-- Material Slide Container -->
+            <div id="belajarSlideContainer" class="my-auto py-4 overflow-y-auto max-h-[60vh] custom-scrollbar pr-2 relative z-10">
+                <!-- Konten Materi Akan Dirender Di Sini -->
+            </div>
+
+            <!-- Belajar Navigation Controls (Dipindah ke Luar Container agar tidak terhapus) -->
+            <div class="flex justify-between items-center pt-3 border-t border-slate-800 mt-2 relative z-10">
+                <button id="prevBelajarBtn" onclick="changeBelajarSlide(-1)" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl text-xs sm:text-sm font-semibold transition-all border border-slate-700 flex items-center gap-2">
+                    <i class="fa-solid fa-arrow-left"></i> Slide Sebelumnya
+                </button>
+                <button id="nextBelajarBtn" onclick="changeBelajarSlide(1)" class="px-5 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs sm:text-sm font-semibold transition-all shadow-md flex items-center gap-2">
+                    Slide Selanjutnya <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 7. LAYER MENU 2: BERMAIN (10 CHALLENGES)   -->
+        <!-- ========================================== -->
+        <div id="bermainScreen" class="hidden flex-1 bg-slate-900 flex flex-col justify-between p-4 sm:p-8 text-white relative">
+            <!-- Header Bar -->
+            <div class="flex justify-between items-center border-b border-slate-800 pb-3 relative z-10">
+                <button onclick="returnToDashboard()" class="text-xs text-slate-300 hover:text-white bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700 flex items-center gap-1.5">
+                    <i class="fa-solid fa-house"></i> Menu Utama
+                </button>
+                <div class="flex items-center gap-3">
+                    <span class="text-xs text-amber-400 font-mono font-bold bg-amber-950/60 border border-amber-700 px-3 py-1 rounded-full">
+                        Skor: <span id="bermainScore">0</span>
+                    </span>
+                    <span class="text-xs text-emerald-400 font-semibold bg-emerald-950 border border-emerald-700 px-3 py-1 rounded-full" id="bermainNoBadge">
+                        Tantangan 1 / 10
+                    </span>
+                </div>
+            </div>
+            
+            <!-- Running Text -->
+            <marquee scrollamount="5" class="border-b border-slate-800/50 relative z-10 py-2 text-xs sm:text-sm text-amber-300 font-bold tracking-widest">
+                Let's have some fun!!! 🎮 Master your vocabulary and grammar!
+            </marquee>
+
+            <!-- Challenge Container -->
+            <div id="bermainContainer" class="my-auto py-3 overflow-y-auto max-h-[72vh] custom-scrollbar pr-1 relative z-10">
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 8. LAYER MENU 3: BERLATIH (10 ASSESMENTS)  -->
+        <!-- ========================================== -->
+        <div id="berlatihScreen" class="hidden flex-1 bg-slate-900 flex flex-col justify-between p-4 sm:p-8 text-white relative">
+            <!-- Header Bar -->
+            <div class="flex justify-between items-center border-b border-slate-800 pb-3 relative z-10">
+                <button onclick="returnToDashboard()" class="text-xs text-slate-300 hover:text-white bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700 flex items-center gap-1.5">
+                    <i class="fa-solid fa-house"></i> Menu Utama
+                </button>
+                <span class="text-xs text-emerald-400 font-semibold bg-emerald-950 border border-emerald-700 px-3 py-1 rounded-full" id="berlatihNoBadge">
+                    Soal 1 / 10
+                </span>
+            </div>
+
+            <!-- Running Text -->
+            <marquee scrollamount="5" class="border-b border-slate-800/50 relative z-10 py-2 text-xs sm:text-sm text-sky-300 font-bold tracking-widest">
+                Happy Excercise. Tons of Luck!!! 🌟 Give your best shot!
+            </marquee>
+
+            <!-- Assessment Container -->
+            <div id="berlatihContainer" class="my-auto py-3 overflow-y-auto max-h-[72vh] custom-scrollbar pr-1 relative z-10">
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 9. REPORT & CERTIFICATE SCREEN             -->
+        <!-- ========================================== -->
+        <div id="reportScreen" class="hidden flex-1 bg-slate-900 flex flex-col justify-between p-4 sm:p-8 text-white relative overflow-y-auto custom-scrollbar">
+            <!-- Action Header Bar -->
+            <div class="flex justify-between items-center border-b border-slate-800 pb-4 no-print">
+                <button onclick="returnToDashboard()" class="text-xs text-slate-300 hover:text-white bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700 flex items-center gap-1.5">
+                    <i class="fa-solid fa-house"></i> Kembali ke Dashboard
+                </button>
+                <button onclick="downloadReportPDF()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm px-4 py-2 rounded-xl shadow-lg transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-file-pdf text-amber-300"></i> Unduh / Cetak Laporan PDF
+                </button>
+            </div>
+
+            <!-- PRINTABLE REPORT PAPER CARD -->
+            <div id="pdfPaper" class="bg-white text-slate-900 rounded-2xl p-6 sm:p-10 shadow-2xl my-4 max-w-3xl mx-auto w-full border border-slate-200">
+                <!-- Header Kop Laporan -->
+                <div class="border-b-4 border-emerald-800 pb-4 mb-6 flex justify-between items-center">
+                    <div>
+                        <h1 class="text-xl sm:text-2xl font-black text-emerald-900 uppercase tracking-tight">LAPORAN HASIL BELAJAR SISWA</h1>
+                        <p class="text-xs sm:text-sm text-slate-600 font-semibold">Media Pembelajaran Interaktif (MPI) Bahasa Inggris - Recount Text</p>
+                        <p class="text-xs text-slate-500">MTs. Negeri 1 Boalemo | Provinsi Gorontalo</p>
+                    </div>
+                    <!-- Developer Photo on Kop -->
+                    <div class="text-right hidden sm:block">
+                        <img src="https://iili.io/nbZct1t.jpg" alt="Zulkifli Mantulangi" onerror="this.onerror=null; this.src='https://placehold.co/100x100/047857/FFFFFF?text=ZM';" class="w-14 h-14 object-cover rounded-full border-2 border-emerald-700 ml-auto">
+                        <p class="text-[10px] text-slate-500 font-semibold mt-1">Zulkifli Mantulangi, S.S., Gr.</p>
+                    </div>
+                </div>
+
+                <!-- Student Identity Info Grid -->
+                <div class="grid grid-cols-2 gap-4 bg-slate-50 p-4 rounded-xl border border-slate-200 mb-6 text-xs sm:text-sm">
+                    <div>
+                        <p class="text-slate-500">Nama Siswa:</p>
+                        <p class="font-bold text-emerald-950 text-base" id="rptStudentName">-</p>
+                    </div>
+                    <div>
+                        <p class="text-slate-500">Kelas / Rombel:</p>
+                        <p class="font-bold text-slate-800" id="rptStudentClass">-</p>
+                    </div>
+                    <div>
+                        <p class="text-slate-500">Tanggal Akses:</p>
+                        <p class="font-semibold text-slate-700" id="rptDate">-</p>
+                    </div>
+                    <div>
+                        <p class="text-slate-500">Status Capaian:</p>
+                        <p class="font-bold text-emerald-700" id="rptStatus">Tuntas (Lulus)</p>
+                    </div>
+                </div>
+
+                <!-- Score Summary Cards Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6 text-center">
+                    <div class="bg-amber-50 p-4 rounded-xl border border-amber-200">
+                        <p class="text-xs font-semibold text-amber-800 uppercase">Akurasi Bermain</p>
+                        <p class="text-2xl font-black text-amber-600 my-1" id="rptGameScore">0/100</p>
+                        <p class="text-[10px] text-amber-700">10 Tantangan Gamifikasi</p>
+                    </div>
+                    <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-200">
+                        <p class="text-xs font-semibold text-emerald-800 uppercase">Nilai Asesmen</p>
+                        <p class="text-3xl font-black text-emerald-700 my-1" id="rptExamScore">0</p>
+                        <p class="text-[10px] text-emerald-800 font-bold" id="rptGradeLabel">PREDIKAT A</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 col-span-2 sm:col-span-1">
+                        <p class="text-xs font-semibold text-slate-700 uppercase">Penguasaan HOTS</p>
+                        <p class="text-2xl font-black text-slate-800 my-1" id="rptHotsScore">0%</p>
+                        <p class="text-[10px] text-slate-500">Level 3 Penalaran Tinggi</p>
+                    </div>
+                </div>
+
+                <!-- Leveled Breakdown Table -->
+                <div class="mb-6">
+                    <h3 class="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Rincian Penguasaan Level Asesmen</h3>
+                    <table class="w-full text-xs text-left border-collapse border border-slate-200 rounded-lg overflow-hidden">
+                        <thead>
+                            <tr class="bg-emerald-800 text-white">
+                                <th class="p-2.5">Level Soal</th>
+                                <th class="p-2.5">Jumlah Soal</th>
+                                <th class="p-2.5">Bobot Nilai</th>
+                                <th class="p-2.5">Skor Siswa</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200">
+                            <tr>
+                                <td class="p-2.5 font-semibold">Level 1 - Pemahaman Dasar</td>
+                                <td class="p-2.5">3 Soal</td>
+                                <td class="p-2.5">24 Poin (3 x 8)</td>
+                                <td class="p-2.5 font-bold text-emerald-700" id="rptL1Score">0 Poin</td>
+                            </tr>
+                            <tr>
+                                <td class="p-2.5 font-semibold">Level 2 - Aplikasi / Penerapan</td>
+                                <td class="p-2.5">4 Soal</td>
+                                <td class="p-2.5">40 Poin (4 x 10)</td>
+                                <td class="p-2.5 font-bold text-emerald-700" id="rptL2Score">0 Poin</td>
+                            </tr>
+                            <tr>
+                                <td class="p-2.5 font-semibold">Level 3 - Penalaran HOTS</td>
+                                <td class="p-2.5">3 Soal</td>
+                                <td class="p-2.5">36 Poin (3 x 12)</td>
+                                <td class="p-2.5 font-bold text-emerald-700" id="rptL3Score">0 Poin</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- KBC & Teacher Recommendation Card -->
+                <div class="bg-emerald-950 text-white p-4 rounded-xl mb-6 text-xs leading-relaxed">
+                    <div class="flex items-center gap-2 text-amber-400 font-bold mb-1">
+                        <i class="fa-solid fa-heart"></i>
+                        <span>Catatan Kurikulum Berbasis Cinta (KBC) & Rekomendasi Guru:</span>
+                    </div>
+                    <p class="text-slate-200" id="rptKbcNotes">
+                        Selamat! Anda telah mempelajari Recount Text dengan mengintegrasikan pesan hikmah kisah Al-Qur'an serta kecintaan pada kelestarian alam Gorontalo. Tingkatkan terus literasi kritis dan kebiasaan membaca teks Bahasa Inggris!
+                    </p>
+                </div>
+
+                <!-- Footer Signatures Grid -->
+                <div class="grid grid-cols-2 gap-8 pt-4 text-center text-xs">
+                    <div>
+                        <p class="text-slate-500 mb-12">Mengetahui, Orang Tua / Wali Siswa</p>
+                        <p class="font-bold border-t border-slate-300 pt-1 text-slate-800">( ...................................... )</p>
+                    </div>
+                    <div>
+                        <p class="text-slate-500 mb-[48px]">Tilamuta, <span id="rptSignDate">9 November 2026</span><br>Guru Mata Pelajaran</p>
+                        <p class="font-bold text-emerald-900 border-t border-slate-300 pt-1">Zulkifli Mantulangi, S.S., Gr.</p>
+                        <p class="text-[10px] text-slate-500">NIP. 199007072019031014</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- JAVASCRIPT LOGIC ENGINE                    -->
+    <!-- ========================================== -->
+    <script>
+        // ====================================================
+        // KONFIGURASI GOOGLE APPS SCRIPT (GAS) URL
+        // ====================================================
+        const GAS_URL = "https://script.google.com/macros/s/AKfycbyI99WgWnc4XcHUCsu5DqVYy4szz23uyMCOdzUnzYJwuWS81gNRHoawfMQ-EYhShv0A/exec";
+
+        // AUDIO & SOUND EFFECTS ENGINE (Tone.js)
+        let isAudioInitialized = false;
+        let clickSynth, correctSynth, wrongSynth;
+
+        async function initAudio() {
+            if (isAudioInitialized) return;
+            await Tone.start();
+            
+            // SFX Synths
+            clickSynth = new Tone.MembraneSynth().toDestination();
+            clickSynth.volume.value = -12;
+            
+            correctSynth = new Tone.PolySynth(Tone.Synth).toDestination();
+            correctSynth.volume.value = -8;
+            
+            wrongSynth = new Tone.Synth().toDestination();
+            wrongSynth.volume.value = -8;
+
+            isAudioInitialized = true;
+        }
+
+        function playClickSound() {
+            if (isAudioInitialized && clickSynth) {
+                clickSynth.triggerAttackRelease("C2", "32n");
+            }
+        }
+
+        function playCorrectSound() {
+            if (isAudioInitialized && correctSynth) {
+                correctSynth.triggerAttackRelease(["C5", "E5", "G5"], "8n");
+            }
+        }
+
+        function playWrongSound() {
+            if (isAudioInitialized && wrongSynth) {
+                wrongSynth.triggerAttackRelease("C3", "8n");
+            }
+        }
+
+        // Intercept clicks to play sound & init audio
+        document.body.addEventListener('mousedown', (e) => {
+            initAudio(); // Try initializing on any click
+            
+            // Check if clicking a button or interactive element
+            if (e.target.closest('button') || e.target.closest('.cursor-pointer')) {
+                 playClickSound();
+            }
+        });
+
+        // GLOBAL APP STATE
+        let appState = {
+            student: { name: "", class: "" },
+            unlocked: { bermain: false, berlatih: false },
+            guideIndex: 0,
+            belajarIndex: 0,
+            belajarCompleted: [false, false, false, false, false, false],
+            bermainIndex: 0,
+            bermainScore: 0,
+            bermainAnswers: [],
+            berlatihIndex: 0,
+            berlatihAnswers: [],
+            scores: { l1: 0, l2: 0, l3: 0, total: 0 },
+            // Menampung detail rekaman jawaban untuk dikirim ke GAS
+            answersRecord: []
+        };
+
+        // ----------------------------------------------------
+        // 1. DATA: 6 IN-DEPTH BELAJAR SLIDES
+        // ----------------------------------------------------
+        const BELAJAR_DATA = [
+            {
+                title: "1. Definition & Social Function of Recount Text",
+                content: `
+                    <p class="text-slate-300 leading-relaxed mb-4 text-sm sm:text-base">
+                        <strong>Recount Text</strong> is a text that retells past events, experiences, or historical moments in chronological order. Its primary social function is to inform or to entertain the audience about what happened in the past.
+                    </p>
+                    <div class="bg-slate-800 p-4 rounded-xl border border-slate-700 text-xs sm:text-sm space-y-2 mb-4">
+                        <p class="text-amber-300 font-semibold"><i class="fa-solid fa-location-dot"></i> Gorontalo Context Case:</p>
+                        <p class="text-slate-300">"Last weekend, my class visited <strong>Air Terjun Ayuhulalo</strong> in Tilamuta, Boalemo. We documented the lush rainforest and clean waterfall stream."</p>
+                    </div>
+                `,
+                kbc: "Cinta Alam: Retelling natural explorations teaches us to treasure Allah's natural wonders in Boalemo.",
+                quran: {
+                    verse: "فَاقْصُصِ الْقَصَصَ لَعَلَّهُمْ يَتَفَكَّرُونَ",
+                    ref: "QS. Al-A'raf: 176",
+                    trans: "Maka ceritakanlah kisah-kisah itu agar mereka berpikir.",
+                    tafsir: "Recounting stories allows human intellect to reflect on life's journey."
+                },
+                challengeType: "mcq",
+                challenge: {
+                    q: "What is the main goal of a Recount Text?",
+                    options: ["To explain how to make something", "To retell past events to inform or entertain", "To persuade readers to buy something"],
+                    correct: 1
+                }
+            },
+            {
+                title: "2. Generic Structure of Recount Text",
+                content: `
+                    <p class="text-slate-300 text-sm sm:text-base mb-3">A standard Recount Text consists of three core components:</p>
+                    <ul class="list-disc list-inside text-xs sm:text-sm text-slate-300 space-y-2 mb-4">
+                        <li><strong class="text-emerald-300">1. Orientation:</strong> Introducing who was involved, where it happened, and when it took place.</li>
+                        <li><strong class="text-emerald-300">2. Events:</strong> A series of paragraph-by-paragraph accounts detailing what happened in sequence.</li>
+                        <li><strong class="text-emerald-300">3. Re-orientation:</strong> A personal concluding comment or reflection by the writer.</li>
+                    </ul>
+                `,
+                kbc: "Cinta Sesama Insan: Expressing personal feelings in re-orientation builds empathy and emotional honesty.",
+                quran: {
+                    verse: "وَكُلًّا نَّقُصُّ عَلَيْكَ مِنْ أَنبَاءِ الرُّسُلِ مَا نُثَبِّتُ بِهِ فُؤَادَكَ",
+                    ref: "QS. Hud: 120",
+                    trans: "Dan semua kisah rasul-rasul Kami ceritakan kepadamu, agar dengan kisah itu Kami teguhkan hatimu.",
+                    tafsir: "Ordered historical events reinforce conviction and purpose."
+                },
+                challengeType: "drag",
+                challenge: {
+                    q: "Match the structure part with its meaning:",
+                    items: [
+                        { text: "Introduction of Who, Where, When", target: "Orientation" },
+                        { text: "Sequence of past activities", target: "Events" },
+                        { text: "Writer's personal feeling at the end", target: "Re-orientation" }
+                    ]
+                }
+            },
+            {
+                title: "3. Language Features: Simple Past Tense",
+                content: `
+                    <p class="text-slate-300 text-sm sm:text-base mb-3">Recount Texts strictly use the <strong>Simple Past Tense</strong> because actions were completed in past time.</p>
+                    <div class="bg-slate-800 p-4 rounded-xl border border-slate-700 text-xs sm:text-sm space-y-2 mb-4">
+                        <p class="text-emerald-400 font-mono font-bold">Subject + Verb 2 (Past Verb) + Object / Adverb</p>
+                        <p class="text-slate-300"><em>Regular:</em> visit &rarr; visited | clean &rarr; cleaned</p>
+                        <p class="text-slate-300"><em>Irregular:</em> go &rarr; went | see &rarr; saw | swim &rarr; swam</p>
+                        <p class="text-slate-400 text-xs">Example: "We <strong>visited</strong> Alun-alun Tilamuta and <strong>saw</strong> the iconic Videotron on KM 0."</p>
+                    </div>
+                `,
+                kbc: "Cinta Ilmu: Mastering grammar enables clear communication of truth and noble history.",
+                quran: {
+                    verse: "عَلَّمَ الْإِنسَانَ مَا لَمْ يَعْلَمْ",
+                    ref: "QS. Al-'Alaq: 5",
+                    trans: "Dia mengajarkan manusia apa yang tidak diketahuinya.",
+                    tafsir: "Allah grants language skills so humanity can document history accurately."
+                },
+                challengeType: "mcq",
+                challenge: {
+                    q: "Choose the correct past verb: 'Yesterday, the students ____ (go) to Desa Bajo.'",
+                    options: ["go", "gone", "went"],
+                    correct: 2
+                }
+            },
+            {
+                title: "4. Time Connectives & Chronological Sequence",
+                content: `
+                    <p class="text-slate-300 text-sm sm:text-base mb-3">To ensure smooth transitions between events, use <strong>Time Connectives</strong>:</p>
+                    <div class="grid grid-cols-2 gap-2 text-xs text-slate-300 mb-4">
+                        <span class="bg-slate-800 p-2 rounded border border-slate-700">• First / Firstly</span>
+                        <span class="bg-slate-800 p-2 rounded border border-slate-700">• After that / Then</span>
+                        <span class="bg-slate-800 p-2 rounded border border-slate-700">• Next / Meanwhile</span>
+                        <span class="bg-slate-800 p-2 rounded border border-slate-700">• Finally / In the end</span>
+                    </div>
+                `,
+                kbc: "Moderasi Beragama: Chronological order teaches structured thinking and fairness in storytelling.",
+                quran: {
+                    verse: "وَالْعَصْرِ ۙ إِنَّ الْإِنسَانَ لَفِي خُسْرٍ",
+                    ref: "QS. Al-'Asr: 1-2",
+                    trans: "Demi masa. Sungguh, manusia berada dalam kerugian.",
+                    tafsir: "Time sequence emphasizes the value of structured time management."
+                },
+                challengeType: "mcq",
+                challenge: {
+                    q: "Which word is NOT a time connective?",
+                    options: ["First", "Because", "Afterward"],
+                    correct: 1
+                }
+            },
+            {
+                title: "5. Types of Recount Text",
+                content: `
+                    <p class="text-slate-300 text-sm sm:text-base mb-3">Recount Texts come in different categories depending on purpose:</p>
+                    <ol class="list-decimal list-inside text-xs sm:text-sm text-slate-300 space-y-2 mb-4">
+                        <li><strong>Personal Recount:</strong> Retelling author's own experience (e.g., Trip to Pulo Cinta).</li>
+                        <li><strong>Factual Recount:</strong> Reporting an incident or scientific record (e.g., Eco-tourist count in Boalemo).</li>
+                        <li><strong>Biographical Recount:</strong> Writing life history of an inspirational figure.</li>
+                    </ol>
+                `,
+                kbc: "Cinta Tanah Air: Biographical recounts of local leaders foster patriotism and pride.",
+                quran: {
+                    verse: "وَاذْكُرْ فِي الْكِتَابِ إِبْرَاهِيمَ ۚ إِنَّهُ كَانَ صِدِّيقًا نَّبِيًّا",
+                    ref: "QS. Maryam: 41",
+                    trans: "Dan ceritakanlah (Muhammad) kisah Ibrahim di dalam Kitab.",
+                    tafsir: "Biographical recounts preserve noble role models for future generations."
+                },
+                challengeType: "mcq",
+                challenge: {
+                    q: "A recount detailing the history of a national hero is called...",
+                    options: ["Factual Recount", "Biographical Recount", "Personal Recount"],
+                    correct: 1
+                }
+            },
+            {
+                title: "6. Analyzing Explicit & Implicit Information",
+                content: `
+                    <p class="text-slate-300 text-sm sm:text-base mb-3">Critical reading requires two skills:</p>
+                    <div class="space-y-3 text-xs sm:text-sm text-slate-300 mb-4">
+                        <div class="p-3 bg-slate-800 rounded-xl border border-slate-700">
+                            <strong class="text-emerald-300">Explicit Information (Tersurat):</strong> Directly stated in the text. (e.g., "We arrived at 08:00 AM").
+                        </div>
+                        <div class="p-3 bg-slate-800 rounded-xl border border-slate-700">
+                            <strong class="text-amber-300">Implicit Information (Tersirat):</strong> Inferred by reading between the lines. (e.g., "The sun burned our skin" &rarr; It was hot weather).
+                        </div>
+                    </div>
+                `,
+                kbc: "Cinta Allah & Rasul: Deep reading encourages critical reflection (Tadabbur) on moral truths.",
+                quran: {
+                    verse: "أَفَلَا يَتَدَبَّرُونَ الْقُرْآنَ",
+                    ref: "QS. An-Nisa: 82",
+                    trans: "Maka tidakkah mereka menghayati (mendalami) Al-Qur'an?",
+                    tafsir: "Implicit analysis aligns with deep tadabbur, reading beyond surface words."
+                },
+                challengeType: "mcq",
+                challenge: {
+                    q: "If a text states 'We wore heavy raincoats at Ayuhulalo', what is implicit?",
+                    options: ["It was raining heavily", "It was a sunny hot day", "They were swimming"],
+                    correct: 0
+                }
+            }
+        ];
+
+        // ----------------------------------------------------
+        // 2. DATA: 10 BERMAIN CHALLENGES (100-200 Words Stimulus)
+        // ----------------------------------------------------
+        const BERMAIN_DATA = [
+            {
+                id: 1,
+                title: "Tantangan 1: Identifikasi Orientation (100-200 Kata)",
+                type: "mcq",
+                stimulus: `
+                    Last Saturday, IX grade students from MTs. Negeri 1 Boalemo conducted an eco-literacy trip to Desa Bajo in Boalemo, Gorontalo. We left the madrasah compound at 07:00 AM riding two local buses. The weather was clear and blue, filling everyone with joy. The main purpose of our visit was to learn how the Bajau community lives harmoniously with marine ecosystems while maintaining coastal mangrove forests.
+                `,
+                q: "Where and when did the recount story take place based on the orientation paragraph above?",
+                options: ["Desa Bajo, Boalemo on Last Saturday", "Alun-alun Tilamuta on Sunday", "Air Terjun Ayuhulalo last month"],
+                correct: 0
+            },
+            {
+                id: 2,
+                title: "Tantangan 2: Mengurutkan Peristiwa (Chronological Order)",
+                type: "order",
+                stimulus: `
+                    Read the randomized steps of our environmental campaign at Alun-alun Tilamuta Videotron point:
+                    (A) Finally, we snapped group photos in front of KM 0 Boalemo monument.
+                    (B) First, we gathered at 08:00 AM near the Videotron display.
+                    (C) After that, we distributed 200 eco-friendly flyers to passersby.
+                `,
+                q: "Arrange the chronological sequence correctly:",
+                correctOrder: ["B", "C", "A"]
+            },
+            {
+                id: 3,
+                title: "Tantangan 3: Menjodohkan Verbs (Past vs Base)",
+                type: "match",
+                stimulus: `
+                    During our observation at Pulo Cinta resort, we recorded several activities done by marine researchers. Match the base present verb with its appropriate past form used in recount text!
+                `,
+                pairs: [
+                    { left: "Observe", right: "Observed" },
+                    { left: "Write", right: "Wrote" },
+                    { left: "See", right: "Saw" }
+                ]
+            },
+            {
+                id: 4,
+                title: "Tantangan 4: Drag & Drop Structure Labels",
+                type: "drag",
+                stimulus: `
+                    "Overall, our educational trip to Ayuhulalo Waterfall was an unforgettable experience. I felt deeply grateful to Allah SWT for creating such beautiful natural heritage in our Boalemo regency."
+                `,
+                q: "Label the paragraph snippet above with the right structure part:",
+                options: ["Orientation", "Events", "Re-orientation"],
+                correct: "Re-orientation"
+            },
+            {
+                id: 5,
+                title: "Tantangan 5: Pilihan Ganda Kompleks (Informasi Tersurat)",
+                type: "complex",
+                stimulus: `
+                    The study team visited the Boalemo Videotron at 09:00 AM. They displayed a 5-minute video highlighting coastal cleanup near Desa Bajo. 45 students took active notes, while 3 teachers supervised the activity. They did not throw any litter during the 2-hour event.
+                `,
+                q: "Select TWO statements that are EXPLICITLY true:",
+                options: [
+                    "45 students took notes during the presentation.",
+                    "The event was held at Air Terjun Ayuhulalo.",
+                    "The video highlighted coastal cleanup near Desa Bajo."
+                ],
+                correctIndices: [0, 2]
+            },
+            {
+                id: 6,
+                title: "Tantangan 6: Numerasi & Time Connective (100-200 Kata)",
+                type: "mcq",
+                stimulus: `
+                    We started walking to KM 0 monument at 08:15 AM. First, we walked 500 meters from Alun-alun Tilamuta. Then, we rested for 15 minutes. Afterward, we continued walking another 300 meters and arrived at 09:00 AM. In total, we spent 45 minutes traveling 800 meters.
+                `,
+                q: "What time connective was used right after resting for 15 minutes?",
+                options: ["First", "Afterward", "Finally"],
+                correct: 1
+            },
+            {
+                id: 7,
+                title: "Tantangan 7: Factual Recount Analysis",
+                type: "mcq",
+                stimulus: `
+                    On October 12, 2025, Boalemo Environmental Department recorded a zero-plastic waste milestone in Tilamuta square during the local festival. Over 1,200 participants brought reusable bottles, saving approximately 3,000 single-use plastic cups in a single afternoon.
+                `,
+                q: "Why is this text classified as a Factual Recount?",
+                options: [
+                    "Because it tells a fictional fairy tale",
+                    "Because it records real factual data and figures",
+                    "Because it contains personal feelings only"
+                ],
+                correct: 1
+            },
+            {
+                id: 8,
+                title: "Tantangan 8: Menjodohkan Time Connective & Meaning",
+                type: "match",
+                stimulus: `
+                    Connectives bind sequence of events in past recounts. Match the connective with its Indonesian meaning:
+                `,
+                pairs: [
+                    { left: "Meanwhile", right: "Sementara itu" },
+                    { left: "Afterward", right: "Setelah itu" },
+                    { left: "Initially", right: "Pada awalnya" }
+                ]
+            },
+            {
+                id: 9,
+                title: "Tantangan 9: Identifying Re-orientation Emotion",
+                type: "mcq",
+                stimulus: `
+                    "As the sun set over Pulo Cinta, we boarded the boat back to the mainland. We were exhausted after planting 100 mangrove seedlings, but our hearts were filled with happiness and pride for protecting our earth."
+                `,
+                q: "What emotional state is implicitly shown in the author's re-orientation?",
+                options: [
+                    "Disappointed and angry",
+                    "Tired yet deeply satisfied and proud",
+                    "Bored and indifference"
+                ],
+                correct: 1
+            },
+            {
+                id: 10,
+                title: "Tantangan 10: Drag & Drop Past Tense Verb",
+                type: "drag",
+                stimulus: `
+                    Yesterday, my family ____ (visit) the historical landmark KM 0 in Boalemo and ____ (take) beautiful photographs.
+                `,
+                q: "Select the correct pair of past verbs to complete the sentence:",
+                options: ["visited - took", "visit - take", "visiting - taken"],
+                correct: "visited - took"
+            }
+        ];
+
+        // ----------------------------------------------------
+        // 3. DATA: 10 BERLATIH ASSESSMENTS (Leveled L1, L2, L3 HOTS)
+        // ----------------------------------------------------
+        const BERLATIH_DATA = [
+            // LEVEL 1: Pemahaman (3 Soal @ 8 Poin)
+            {
+                id: 1, level: 1, levelLabel: "Level 1 - Pemahaman Dasar (8 Poin)",
+                stimulus: `
+                    Text 1: A Day at Air Terjun Ayuhulalo
+                    Last Sunday, my friends and I went to Air Terjun Ayuhulalo in Boalemo. We left at 08:00 AM by motorbikes. When we arrived, the fresh mountain air welcomed us. We swam in the cool water and had lunch together near the rocks. We went home at 03:00 PM feeling refreshed.
+                `,
+                q: "What time did the writer leave for Air Terjun Ayuhulalo?",
+                options: ["At 07:00 AM", "At 08:00 AM", "At 03:00 PM"],
+                correct: 1
+            },
+            {
+                id: 2, level: 1, levelLabel: "Level 1 - Pemahaman Dasar (8 Poin)",
+                stimulus: `
+                    Text 2: Observing Videotron at Alun-alun Tilamuta
+                    Yesterday evening, MTsN 1 Boalemo English Club members gathered at Alun-alun Tilamuta. We watched an educational video displayed on the municipal Videotron near KM 0. The video presented mangrove conservation efforts in Gorontalo province.
+                `,
+                q: "What was the video on the Videotron about?",
+                options: ["Football tournament news", "Mangrove conservation efforts in Gorontalo", "Music concert broadcast"],
+                correct: 1
+            },
+            {
+                id: 3, level: 1, levelLabel: "Level 1 - Pemahaman Dasar (8 Poin)",
+                stimulus: `
+                    Text 3: Visiting Desa Bajo
+                    Desa Bajo is a unique stilt-house village in Boalemo. Last month, our class visited the village to study sea turtle conservation. We interviewed local fishermen and observed how they protect sea turtle nests along the coastline.
+                `,
+                q: "What is the primary feature of Desa Bajo described in the text?",
+                options: ["High mountain forest", "Stilt-house village in Boalemo", "Modern shopping mall"],
+                correct: 1
+            },
+
+            // LEVEL 2: Penerapan / Aplikasi (4 Soal @ 10 Poin)
+            {
+                id: 4, level: 2, levelLabel: "Level 2 - Aplikasi / Penerapan (10 Poin)",
+                stimulus: `
+                    Text 4: Cleaning Up Tilamuta Square
+                    On Friday morning, 50 students from MTsN 1 Boalemo collected 30 kg of organic waste and 15 kg of inorganic plastic waste around Alun-alun Tilamuta. First, they sorted paper and plastic into blue bins. Then, they brought organic leaves to the local composting site.
+                `,
+                q: "What is the total weight of waste collected by the students?",
+                options: ["30 kg", "15 kg", "45 kg"],
+                correct: 2
+            },
+            {
+                id: 5, level: 2, levelLabel: "Level 2 - Aplikasi / Penerapan (10 Poin)",
+                stimulus: `
+                    Text 5: Eco Tour to Pulo Cinta
+                    Last year, our youth group spent two days at Pulo Cinta resort. On the first day, we planted 50 coral fragments. On the second day, we cleaned 200 meters of shoreline. We learned that healthy coral reefs protect our island from coastal erosion.
+                `,
+                q: "Which action in the text directly reflects the Kurikulum Berbasis Cinta value of loving nature?",
+                options: ["Sleeping at the resort", "Planting coral fragments and cleaning shoreline", "Renting motorboats"],
+                correct: 1
+            },
+            {
+                id: 6, level: 2, levelLabel: "Level 2 - Aplikasi / Penerapan (10 Poin)",
+                stimulus: `
+                    Text 6: Sentence Rearrangement
+                    1. After that, we took pictures at KM 0 Boalemo marker.
+                    2. First, we gathered at MTsN 1 Boalemo yard.
+                    3. Finally, we enjoyed fresh coconut drink at Tilamuta plaza.
+                    4. Next, we cycled together to Alun-alun Tilamuta.
+                `,
+                q: "Choose the correct chronological order to form a coherent recount paragraph:",
+                options: ["2 - 4 - 1 - 3", "1 - 2 - 3 - 4", "2 - 1 - 4 - 3"],
+                correct: 0
+            },
+            {
+                id: 7, level: 2, levelLabel: "Level 2 - Aplikasi / Penerapan (10 Poin)",
+                stimulus: `
+                    Text 7: Past Tense Verb Verification
+                    During the field trip to Ayuhulalo, Rahmat ____ (bring) a digital camera. He ____ (capture) thirty photos of wild orchids and ____ (share) them on the madrasah website.
+                `,
+                q: "Which sequence of verbs correctly completes the recount text?",
+                options: ["brought - captured - shared", "bring - capture - share", "bringing - capturing - sharing"],
+                correct: 0
+            },
+
+            // LEVEL 3: Penalaran / HOTS (3 Soal @ 12 Poin)
+            {
+                id: 8, level: 3, levelLabel: "Level 3 - Penalaran HOTS (12 Poin)",
+                stimulus: `
+                    Text 8: Coral Restoration at Pulo Cinta
+                    In 2024, marine biologists monitored coral restoration near Pulo Cinta. In 2022, coral coverage was only 35%. After two years of community-led restoration, coral coverage rose to 68%. Fish populations increased by 40%, allowing local Bajau fishermen to harvest fish sustainably without using destructive explosives.
+                `,
+                q: "What critical conclusion (implicit) can be drawn regarding community-led restoration?",
+                options: [
+                    "Restoration benefits both marine biodiversity and local economic sustainability",
+                    "Coral reefs grow naturally without human effort",
+                    "Bajau fishermen no longer need sea resources"
+                ],
+                correct: 0
+            },
+            {
+                id: 9, level: 3, levelLabel: "Level 3 - Penalaran HOTS (12 Poin)",
+                stimulus: `
+                    Text 9: Quranic Reflection & Environmental Recount
+                    "And do not cause corruption on the earth after its reformation" (QS. Al-A'raf: 56). Reflecting on this verse, IX grade students wrote a recount essay after witnessing plastic trash along Boalemo riverbank. They organized a weekly recycling squad in MTsN 1 Boalemo to prevent further river pollution.
+                `,
+                q: "How does the text synthesize Quranic values with student environmental action?",
+                options: [
+                    "By ignoring the pollution and focusing on grammar tests",
+                    "By turning Quranic warning into practical recycling action to preserve the earth",
+                    "By writing fictional stories without real-world practice"
+                ],
+                correct: 1
+            },
+            {
+                id: 10, level: 3, levelLabel: "Level 3 - Penalaran HOTS (12 Poin)",
+                stimulus: `
+                    Text 10: Comparative Recount Analysis
+                    Recount A describes a student's fun vacation at Ayuhulalo Waterfall focusing on swimming and eating snacks. Recount B describes a student's scientific observation at Ayuhulalo documenting water clarity pH levels, local flora species, and waste management practices.
+                `,
+                q: "Analyze the main difference between Recount A and Recount B:",
+                options: [
+                    "Recount A is a Personal Recount of leisure, while Recount B is a Factual/Scientific Recount",
+                    "Recount A is a recount text, while Recount B is a narrative fairy tale",
+                    "Both texts have identical purposes and structures"
+                ],
+                correct: 0
+            }
+        ];
+
+        // ----------------------------------------------------
+        // 4. CORE NAVIGATION & SCREEN CONTROL
+        // ----------------------------------------------------
+        window.addEventListener('DOMContentLoaded', () => {
+            // Sinkronkan Bank Soal ke Google Sheets jika URL GAS telah diisi
+            syncDataSoalToGAS();
+
+            setTimeout(() => {
+                const splash = document.getElementById('splashScreen');
+                splash.classList.add('opacity-0');
+                setTimeout(() => {
+                    splash.classList.add('hidden');
+                    document.getElementById('coverScreen').classList.remove('hidden');
+                    document.getElementById('coverScreen').classList.add('flex');
+                }, 700);
+            }, 1800);
+        });
+
+        // Pengiriman otomatis Bank Soal (Data Soal) ke Google Sheets
+        function syncDataSoalToGAS() {
+            if (!GAS_URL || GAS_URL === "URL_GAS_ANDA_DISINI") return;
+            
+            fetch(GAS_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    action: "initDataSoal",
+                    bermainData: BERMAIN_DATA,
+                    berlatihData: BERLATIH_DATA
+                })
+            }).catch(err => console.log("Init Data Soal Error: ", err));
+        }
+
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        function goToIdentityScreen() {
+            document.getElementById('coverScreen').classList.add('hidden');
+            document.getElementById('coverScreen').classList.remove('flex');
+            document.getElementById('identityScreen').classList.remove('hidden');
+            document.getElementById('identityScreen').classList.add('flex');
+        }
+
+        function saveStudentIdentity(e) {
+            e.preventDefault();
+            const name = document.getElementById('studentName').value.trim();
+            const cls = document.getElementById('studentClass').value;
+            const errDiv = document.getElementById('identityError');
+
+            if (!name || !cls) {
+                errDiv.classList.remove('hidden');
+                return;
+            }
+            errDiv.classList.add('hidden');
+            appState.student.name = name;
+            appState.student.class = cls;
+
+            // Update UI Badges
+            document.getElementById('dashStudentName').innerText = name;
+            document.getElementById('dashStudentClass').innerText = cls;
+            document.getElementById('welcomeUserText').innerText = `Selamat Datang, ${name}!`;
+
+            // Initials
+            const initials = name.split(' ').map(n => n[0]).join('').substring(0,2).toUpperCase();
+            document.getElementById('userInitials').innerText = initials || 'S';
+
+            // Show Guide Screen
+            document.getElementById('identityScreen').classList.add('hidden');
+            document.getElementById('identityScreen').classList.remove('flex');
+            document.getElementById('guideScreen').classList.remove('hidden');
+            document.getElementById('guideScreen').classList.add('flex');
+            renderGuideSlide();
+        }
+
+        // ----------------------------------------------------
+        // 5. GUIDE SLIDES LOGIC
+        // ----------------------------------------------------
+        const GUIDE_DATA = [
+            {
+                icon: "fa-map-location-dot",
+                title: "Struktur Belajar Terkunci Bertahap",
+                desc: "Aplikasi ini memandu Anda belajar secara terstruktur. Selesaikan 6 Slide di <strong>Menu Belajar</strong> untuk membuka <strong>Menu Bermain</strong>. Tuntaskan 10 Tantangan Bermain untuk membuka <strong>Menu Berlatih</strong>!"
+            },
+            {
+                icon: "fa-heart-circle-check",
+                title: "Kurikulum Berbasis Cinta & Quranic Values",
+                desc: "Setiap slide dilengkapi petikan ayat Al-Qur'an dan nilai Kasih Sayang (KBC Kemenag RI) yang mengaitkan konteks lokal Boalemo & Gorontalo dengan kelestarian alam ciptaan Allah."
+            },
+            {
+                icon: "fa-file-invoice",
+                title: "Asesmen Literasi-Numerasi & Laporan PDF",
+                desc: "Di akhir sesi Berlatih, aplikasi akan menghitung skor penguasaan Level 1, 2, dan 3 (HOTS) Anda serta menerbitkan <strong>Laporan Hasil Belajar PDF</strong> resmi bertanda tangan guru."
+            }
+        ];
+
+        function renderGuideSlide() {
+            const data = GUIDE_DATA[appState.guideIndex];
+            document.getElementById('guideStepBadge').innerText = `Slide ${appState.guideIndex + 1} dari ${GUIDE_DATA.length}`;
+            
+            let html = `
+                <div class="guide-slide space-y-4 animate-fade-in">
+                    <div class="w-14 h-14 bg-emerald-500/20 text-emerald-400 rounded-2xl flex items-center justify-center text-2xl border border-emerald-500/30">
+                        <i class="fa-solid ${data.icon}"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-emerald-300">${data.title}</h3>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">${data.desc}</p>
+                </div>
+            `;
+            document.getElementById('guideContent').innerHTML = html;
+
+            document.getElementById('prevGuideBtn').style.visibility = appState.guideIndex === 0 ? 'hidden' : 'visible';
+            const nextBtn = document.getElementById('nextGuideBtn');
+            if (appState.guideIndex === GUIDE_DATA.length - 1) {
+                nextBtn.innerHTML = `Masuk ke Menu Utama <i class="fa-solid fa-house ml-1"></i>`;
+                nextBtn.className = "px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-xl text-sm transition-all shadow-md flex items-center gap-2";
+            } else {
+                nextBtn.innerHTML = `Selanjutnya <i class="fa-solid fa-chevron-right ml-1"></i>`;
+                nextBtn.className = "px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-xl text-sm transition-all shadow-md flex items-center gap-2";
+            }
+        }
+
+        function changeGuideSlide(dir) {
+            if (dir === 1 && appState.guideIndex === GUIDE_DATA.length - 1) {
+                // Enter Dashboard
+                document.getElementById('guideScreen').classList.add('hidden');
+                document.getElementById('guideScreen').classList.remove('flex');
+                document.getElementById('dashboardScreen').classList.remove('hidden');
+                document.getElementById('dashboardScreen').classList.add('flex');
+                return;
+            }
+            appState.guideIndex += dir;
+            renderGuideSlide();
+        }
+
+        function returnToDashboard() {
+            const screens = ['belajarScreen', 'bermainScreen', 'berlatihScreen', 'reportScreen'];
+            screens.forEach(s => {
+                const el = document.getElementById(s);
+                if (el) {
+                    el.classList.add('hidden');
+                    el.classList.remove('flex');
+                }
+            });
+            document.getElementById('dashboardScreen').classList.remove('hidden');
+            document.getElementById('dashboardScreen').classList.add('flex');
+            updateDashboardLocks();
+        }
+
+        function tryOpenMenu(menu) {
+            if (menu === 'bermain' && !appState.unlocked.bermain) {
+                document.getElementById('lockedModalMsg').innerText = "Anda harus menyelesaikan seluruh 6 Slide & Aktivitas di Menu BELAJAR terlebih dahulu!";
+                openModal('lockedNoticeModal');
+                return;
+            }
+            if (menu === 'berlatih' && !appState.unlocked.berlatih) {
+                document.getElementById('lockedModalMsg').innerText = "Anda harus merampungkan 10 Tantangan di Menu BERMAIN terlebih dahulu!";
+                openModal('lockedNoticeModal');
+                return;
+            }
+            openMenu(menu);
+        }
+
+        function openMenu(menu) {
+            document.getElementById('dashboardScreen').classList.add('hidden');
+            document.getElementById('dashboardScreen').classList.remove('flex');
+
+            if (menu === 'belajar') {
+                document.getElementById('belajarScreen').classList.remove('hidden');
+                document.getElementById('belajarScreen').classList.add('flex');
+                renderBelajarSlide();
+            } else if (menu === 'bermain') {
+                document.getElementById('bermainScreen').classList.remove('hidden');
+                document.getElementById('bermainScreen').classList.add('flex');
+                renderBermainChallenge();
+            } else if (menu === 'berlatih') {
+                document.getElementById('berlatihScreen').classList.remove('hidden');
+                document.getElementById('berlatihScreen').classList.add('flex');
+                renderBerlatihQuestion();
+            }
+        }
+
+        function updateDashboardLocks() {
+            // Check Bermain Lock
+            const cardBermain = document.getElementById('cardBermain');
+            const iconBermain = document.getElementById('iconBermain');
+            const badgeBermain = document.getElementById('badgeBermain');
+            const footerBermain = document.getElementById('footerBermain');
+
+            if (appState.unlocked.bermain) {
+                cardBermain.className = "cursor-pointer bg-slate-800/90 hover:bg-slate-800 border-2 border-amber-500 rounded-2xl p-6 flex flex-col justify-between transition-all hover:scale-105 shadow-xl group";
+                iconBermain.className = "w-14 h-14 bg-amber-500/20 text-amber-400 group-hover:bg-amber-500 group-hover:text-slate-950 rounded-2xl flex items-center justify-center text-2xl transition-all border border-amber-500/40";
+                badgeBermain.className = "bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1";
+                badgeBermain.innerHTML = `<i class="fa-solid fa-lock-open text-xs"></i> TERBUKA`;
+                footerBermain.innerHTML = `<span>Mulai Tantangan</span> <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>`;
+                footerBermain.className = "mt-4 pt-3 border-t border-slate-700/60 flex items-center justify-between text-xs font-semibold text-amber-400";
+            }
+
+            // Check Berlatih Lock
+            const cardBerlatih = document.getElementById('cardBerlatih');
+            const iconBerlatih = document.getElementById('iconBerlatih');
+            const badgeBerlatih = document.getElementById('badgeBerlatih');
+            const footerBerlatih = document.getElementById('footerBerlatih');
+
+            if (appState.unlocked.berlatih) {
+                cardBerlatih.className = "cursor-pointer bg-slate-800/90 hover:bg-slate-800 border-2 border-emerald-500 rounded-2xl p-6 flex flex-col justify-between transition-all hover:scale-105 shadow-xl group";
+                iconBerlatih.className = "w-14 h-14 bg-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white rounded-2xl flex items-center justify-center text-2xl transition-all border border-emerald-500/40";
+                badgeBerlatih.className = "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1";
+                badgeBerlatih.innerHTML = `<i class="fa-solid fa-lock-open text-xs"></i> TERBUKA`;
+                footerBerlatih.innerHTML = `<span>Mulai Asesmen</span> <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>`;
+                footerBerlatih.className = "mt-4 pt-3 border-t border-slate-700/60 flex items-center justify-between text-xs font-semibold text-emerald-400";
+            }
+        }
+
+        // ----------------------------------------------------
+        // 6. MENU 1: BELAJAR LOGIC & RENDERING
+        // ----------------------------------------------------
+        function renderBelajarSlide() {
+            const slide = BELAJAR_DATA[appState.belajarIndex];
+            document.getElementById('belajarSlideBadge').innerText = `Slide ${appState.belajarIndex + 1} / ${BELAJAR_DATA.length}`;
+
+            let html = `
+                <div class="space-y-4">
+                    <h2 class="text-2xl font-bold text-emerald-300 flex items-center gap-2">
+                        <i class="fa-solid fa-book-bookmark text-amber-400"></i> ${slide.title}
+                    </h2>
+
+                    <!-- Main Concept & Local Context -->
+                    <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+                        ${slide.content}
+                    </div>
+
+                    <!-- KBC & Quranic Verse Integration Box -->
+                    <div class="bg-gradient-to-r from-emerald-950 via-slate-900 to-emerald-950 p-4 rounded-xl border border-emerald-600/40 space-y-2">
+                        <div class="flex justify-between items-center text-amber-400 font-bold text-xs">
+                            <span><i class="fa-solid fa-quran mr-1"></i> Ayat Al-Qur'an & Tadabbur</span>
+                            <span>${slide.quran.ref}</span>
+                        </div>
+                        <p class="font-amiri text-right text-xl text-amber-200 leading-loose">${slide.quran.verse}</p>
+                        <p class="text-xs text-slate-300 italic">"${slide.quran.trans}" (Kemenag RI)</p>
+                        <div class="pt-2 border-t border-emerald-900/60 text-xs text-emerald-300">
+                            <strong>Integrasi KBC:</strong> ${slide.kbc}
+                        </div>
+                    </div>
+
+                    <!-- Mandatory Bottom Interactive Checkpoint Challenge -->
+                    <div class="bg-slate-800/90 p-4 rounded-xl border border-amber-500/40 space-y-3">
+                        <div class="flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-wider">
+                            <i class="fa-solid fa-bolt"></i> Aktivitas Pemantik Checkpoint (Wajib Diselesaikan)
+                        </div>
+                        <p class="text-xs text-slate-200 font-semibold">${slide.challenge.q}</p>
+            `;
+
+            if (slide.challengeType === 'mcq') {
+                html += `<div class="space-y-2">`;
+                slide.challenge.options.forEach((opt, idx) => {
+                    html += `
+                        <button onclick="checkBelajarMCQ(${idx}, ${slide.challenge.correct})" class="w-full text-left p-2.5 bg-slate-900 hover:bg-slate-700 border border-slate-700 rounded-lg text-xs text-slate-200 transition-all flex items-center justify-between">
+                            <span>${String.fromCharCode(65+idx)}. ${opt}</span>
+                            <i class="fa-regular fa-circle text-slate-500"></i>
+                        </button>
+                    `;
+                });
+                html += `</div>`;
+            } else if (slide.challengeType === 'drag') {
+                html += `
+                    <div class="space-y-2 text-xs">
+                        <div class="bg-slate-950 border border-slate-700 p-3 rounded-lg text-center mb-2">
+                            <span class="text-slate-400 text-[10px] block uppercase mb-1">Makna Struktur yang Dicari:</span>
+                            <strong class="text-amber-300 text-sm">"Introduction of Who, Where, When"</strong>
+                        </div>
+                        <p class="text-slate-400 text-[11px]">Pilih struktur teks yang sesuai dengan makna di atas:</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                            <button onclick="checkBelajarDrag('Orientation')" class="p-2 bg-slate-900 hover:bg-emerald-900 border border-slate-700 rounded text-center transition-all">Orientation</button>
+                            <button onclick="checkBelajarDrag('Events')" class="p-2 bg-slate-900 hover:bg-emerald-900 border border-slate-700 rounded text-center transition-all">Events</button>
+                            <button onclick="checkBelajarDrag('Re-orientation')" class="p-2 bg-slate-900 hover:bg-emerald-900 border border-slate-700 rounded text-center transition-all">Re-orientation</button>
+                        </div>
+                    </div>
+                `;
+            }
+
+            html += `
+                        <div id="belajarFeedback" class="hidden p-2.5 rounded-lg text-xs font-semibold"></div>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('belajarSlideContainer').innerHTML = html;
+            document.getElementById('prevBelajarBtn').style.visibility = appState.belajarIndex === 0 ? 'hidden' : 'visible';
+            
+            const nextBtn = document.getElementById('nextBelajarBtn');
+            if (appState.belajarIndex === BELAJAR_DATA.length - 1) {
+                nextBtn.innerHTML = `Selesai & Buka Menu Bermain <i class="fa-solid fa-lock-open ml-1"></i>`;
+                nextBtn.className = "px-5 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-xl text-xs sm:text-sm transition-all shadow-md flex items-center gap-2";
+            } else {
+                nextBtn.innerHTML = `Slide Selanjutnya <i class="fa-solid fa-arrow-right ml-1"></i>`;
+                nextBtn.className = "px-5 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-xl text-xs sm:text-sm transition-all shadow-md flex items-center gap-2";
+            }
+        }
+
+        function checkBelajarMCQ(selected, correct) {
+            const fb = document.getElementById('belajarFeedback');
+            fb.classList.remove('hidden');
+            if (selected === correct) {
+                playCorrectSound();
+                fb.className = "p-2.5 bg-emerald-900/60 border border-emerald-500 text-emerald-200 rounded-lg text-xs font-semibold flex items-center gap-2";
+                fb.innerHTML = `<i class="fa-solid fa-circle-check"></i> Jawaban Benar! Anda dapat melanjutkan slide.`;
+                appState.belajarCompleted[appState.belajarIndex] = true;
+            } else {
+                playWrongSound();
+                fb.className = "p-2.5 bg-red-900/60 border border-red-500 text-red-200 rounded-lg text-xs font-semibold flex items-center gap-2";
+                fb.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> Kurang tepat, silakan coba opsi lainnya!`;
+            }
+        }
+
+        function checkBelajarDrag(val) {
+            const fb = document.getElementById('belajarFeedback');
+            fb.classList.remove('hidden');
+            if (val === 'Orientation') {
+                playCorrectSound();
+                fb.className = "p-2.5 bg-emerald-900/60 border border-emerald-500 text-emerald-200 rounded-lg text-xs font-semibold flex items-center gap-2";
+                fb.innerHTML = `<i class="fa-solid fa-circle-check"></i> Hebat! "Who, Where, When" adalah bagian dari Orientation.`;
+                appState.belajarCompleted[appState.belajarIndex] = true;
+            } else {
+                playWrongSound();
+                fb.className = "p-2.5 bg-red-900/60 border border-red-500 text-red-200 rounded-lg text-xs font-semibold flex items-center gap-2";
+                fb.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> Coba lagi! Bagian mana yang memperkenalkan latar tokoh dan waktu?`;
+            }
+        }
+
+        function changeBelajarSlide(dir) {
+            if (dir === 1 && !appState.belajarCompleted[appState.belajarIndex]) {
+                const fb = document.getElementById('belajarFeedback');
+                if (fb) {
+                    fb.classList.remove('hidden');
+                    fb.className = "p-2.5 bg-amber-900/60 border border-amber-500 text-amber-200 rounded-lg text-xs font-semibold flex items-center gap-2";
+                    fb.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> Selesaikan aktivitas pemantik di bawah sebelum pindah slide!`;
+                }
+                return;
+            }
+
+            if (dir === 1 && appState.belajarIndex === BELAJAR_DATA.length - 1) {
+                // Unlock Bermain
+                appState.unlocked.bermain = true;
+                returnToDashboard();
+                return;
+            }
+
+            appState.belajarIndex += dir;
+            renderBelajarSlide();
+        }
+
+        // ----------------------------------------------------
+        // 7. MENU 2: BERMAIN LOGIC & RENDERING
+        // ----------------------------------------------------
+        function renderBermainChallenge() {
+            const game = BERMAIN_DATA[appState.bermainIndex];
+            document.getElementById('bermainNoBadge').innerText = `Tantangan ${appState.bermainIndex + 1} / 10`;
+            document.getElementById('bermainScore').innerText = appState.bermainScore;
+
+            let html = `
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-amber-300 flex items-center gap-2">
+                        <i class="fa-solid fa-gamepad text-emerald-400"></i> ${game.title}
+                    </h3>
+
+                    <!-- Stimulus 100-200 Words -->
+                    <div class="bg-slate-800 p-4 rounded-xl border border-slate-700 text-xs sm:text-sm text-slate-300 leading-relaxed max-h-40 overflow-y-auto custom-scrollbar">
+                        <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider block mb-1">Stimulus Bacaan Literasi / Numerasi:</span>
+                        ${game.stimulus}
+                    </div>
+
+                    <p class="text-sm font-semibold text-white">${game.q || ""}</p>
+                    <div id="gameActionArea">
+            `;
+
+            // Mechanics Switcher
+            if (game.type === 'mcq') {
+                html += `<div class="space-y-2">`;
+                game.options.forEach((opt, idx) => {
+                    html += `
+                        <button onclick="submitGameAnswer(${idx})" class="w-full text-left p-3 bg-slate-800 hover:bg-slate-700 border border-slate-600 rounded-xl text-xs sm:text-sm text-slate-200 transition-all flex items-center justify-between">
+                            <span>${String.fromCharCode(65+idx)}. ${opt}</span>
+                            <i class="fa-regular fa-circle text-slate-400"></i>
+                        </button>
+                    `;
+                });
+                html += `</div>`;
+            } else if (game.type === 'order') {
+                html += `
+                    <div class="space-y-3 text-xs">
+                        <p class="text-amber-300">Klik tombol urutan di bawah untuk menyusun urutan yang benar (B &rarr; C &rarr; A):</p>
+                        <div class="flex gap-2">
+                            <button onclick="submitGameOrder(['B','C','A'])" class="px-4 py-2 bg-emerald-700 hover:bg-emerald-600 rounded-lg text-white font-bold">Opsi 1: B - C - A</button>
+                            <button onclick="submitGameOrder(['A','B','C'])" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 rounded-lg text-slate-300">Opsi 2: A - B - C</button>
+                        </div>
+                    </div>
+                `;
+            } else if (game.type === 'match') {
+                html += `
+                    <div class="space-y-2 text-xs">
+                        <p class="text-emerald-300">Pasangkan Verb Present & Past yang sesuai:</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                            <button onclick="submitGameMatch(true)" class="p-3 bg-slate-800 hover:bg-emerald-900 border border-slate-700 rounded-xl text-left">
+                                Observe &rarr; Observed<br>Write &rarr; Wrote<br>See &rarr; Saw
+                            </button>
+                        </div>
+                    </div>
+                `;
+            } else if (game.type === 'drag') {
+                html += `<div class="space-y-2">`;
+                game.options.forEach((opt) => {
+                    html += `
+                        <button onclick="submitGameDrag('${opt}')" class="w-full text-left p-3 bg-slate-800 hover:bg-slate-700 border border-slate-600 rounded-xl text-xs text-slate-200">
+                            ${opt}
+                        </button>
+                    `;
+                });
+                html += `</div>`;
+            } else if (game.type === 'complex') {
+                html += `
+                    <div class="space-y-2 text-xs">
+                        <p class="text-amber-300">Pilih gabungan dua pernyataan yang benar:</p>
+                        <button onclick="submitGameComplex(true)" class="w-full p-3 bg-slate-800 hover:bg-emerald-900 border border-slate-700 rounded-xl text-left">
+                            ✓ 45 students took notes<br>✓ Video highlighted coastal cleanup near Desa Bajo
+                        </button>
+                    </div>
+                `;
+            }
+
+            html += `
+                    </div>
+                    <div id="gameFeedback" class="hidden p-3 rounded-xl text-xs font-semibold"></div>
+                </div>
+            `;
+
+            document.getElementById('bermainContainer').innerHTML = html;
+        }
+
+        function submitGameAnswer(idx) {
+            const game = BERMAIN_DATA[appState.bermainIndex];
+            const isCorrect = idx === game.correct;
+            recordAnswer("BERMAIN", game.id, game.q, game.options[idx], isCorrect);
+            handleGameResult(isCorrect);
+        }
+        function submitGameOrder(arr) {
+            const isCorrect = JSON.stringify(arr) === JSON.stringify(['B','C','A']);
+            recordAnswer("BERMAIN", 2, "Mengurutkan Peristiwa", arr.join(" - "), isCorrect);
+            handleGameResult(isCorrect);
+        }
+        function submitGameMatch(isCorrect) {
+            recordAnswer("BERMAIN", 3, "Menjodohkan Verbs", isCorrect ? "Benar" : "Salah", isCorrect);
+            handleGameResult(isCorrect);
+        }
+        function submitGameDrag(val) {
+            const game = BERMAIN_DATA[appState.bermainIndex];
+            const isCorrect = val === game.correct;
+            recordAnswer("BERMAIN", game.id, game.q, val, isCorrect);
+            handleGameResult(isCorrect);
+        }
+        function submitGameComplex(isCorrect) {
+            recordAnswer("BERMAIN", 5, "Pilihan Ganda Kompleks", isCorrect ? "Benar" : "Salah", isCorrect);
+            handleGameResult(isCorrect);
+        }
+
+        function recordAnswer(category, qId, questionText, studentAns, isCorrect) {
+            appState.answersRecord.push({
+                category: category,
+                questionId: qId,
+                question: questionText,
+                studentAnswer: studentAns,
+                isCorrect: isCorrect
+            });
+        }
+
+        function handleGameResult(isCorrect) {
+            const fb = document.getElementById('gameFeedback');
+            fb.classList.remove('hidden');
+
+            let actionBtnHTML = `<button onclick="nextBermainChallenge()" class="px-4 py-1.5 bg-emerald-600 hover:bg-emerald-500 border border-emerald-500 text-white rounded-lg text-xs font-bold transition-all shadow-md">Lanjut <i class="fa-solid fa-arrow-right"></i></button>`;
+            
+            if (appState.bermainIndex === BERMAIN_DATA.length - 1) {
+                actionBtnHTML = `<button onclick="nextBermainChallenge()" class="px-4 py-1.5 bg-amber-500 hover:bg-amber-400 border border-amber-500 text-slate-900 rounded-lg text-xs font-bold transition-all shadow-md">Selesai <i class="fa-solid fa-flag-checkered"></i></button>`;
+            }
+
+            if (isCorrect) {
+                playCorrectSound();
+                appState.bermainScore += 10;
+                fb.className = "p-3 bg-emerald-900/80 border border-emerald-500 text-emerald-200 rounded-xl text-xs font-semibold flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3";
+                fb.innerHTML = `<span><i class="fa-solid fa-circle-check text-emerald-400 text-lg mr-1"></i> Jawaban Anda BENAR (+10 Poin)</span> ${actionBtnHTML}`;
+            } else {
+                playWrongSound();
+                fb.className = "p-3 bg-amber-900/80 border border-amber-500 text-amber-200 rounded-xl text-xs font-semibold flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3";
+                fb.innerHTML = `<span><i class="fa-solid fa-circle-xmark text-amber-400 text-lg mr-1"></i> Jawaban Kurang Tepat</span> ${actionBtnHTML}`;
+            }
+
+            // Disable all buttons in gameActionArea to prevent double clicks
+            const actionArea = document.getElementById('gameActionArea');
+            if (actionArea) {
+                const buttons = actionArea.querySelectorAll('button');
+                buttons.forEach(b => {
+                    b.disabled = true;
+                    b.classList.add('opacity-70', 'cursor-not-allowed');
+                });
+            }
+        }
+
+        function nextBermainChallenge() {
+            if (appState.bermainIndex < BERMAIN_DATA.length - 1) {
+                appState.bermainIndex++;
+                renderBermainChallenge();
+            } else {
+                // Game Finished -> Unlock Berlatih
+                appState.unlocked.berlatih = true;
+                returnToDashboard();
+            }
+        }
+
+        // ----------------------------------------------------
+        // 8. MENU 3: BERLATIH LOGIC & EVALUATION
+        // ----------------------------------------------------
+        function renderBerlatihQuestion() {
+            const q = BERLATIH_DATA[appState.berlatihIndex];
+            document.getElementById('berlatihNoBadge').innerText = `Soal ${appState.berlatihIndex + 1} / 10`;
+
+            let badgeColor = "bg-sky-950 text-sky-400 border-sky-700";
+            if (q.level === 2) badgeColor = "bg-amber-950 text-amber-400 border-amber-700";
+            if (q.level === 3) badgeColor = "bg-rose-950 text-rose-400 border-rose-700";
+
+            let html = `
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs font-mono font-bold px-3 py-1 rounded-full border ${badgeColor}">
+                            ${q.levelLabel}
+                        </span>
+                        <span class="text-xs text-slate-400">Poin Soal: ${q.level === 1 ? 8 : (q.level === 2 ? 10 : 12)}</span>
+                    </div>
+
+                    <!-- Stimulus 100-200 Words -->
+                    <div class="bg-slate-800 p-4 rounded-xl border border-slate-700 text-xs sm:text-sm text-slate-300 leading-relaxed max-h-44 overflow-y-auto custom-scrollbar">
+                        ${q.stimulus}
+                    </div>
+
+                    <p class="text-sm font-semibold text-white">${q.q}</p>
+
+                    <div class="space-y-2">
+            `;
+
+            q.options.forEach((opt, idx) => {
+                html += `
+                    <button onclick="submitExamAnswer(${idx}, this)" class="exam-option w-full text-left p-3 bg-slate-800 hover:bg-slate-700 border border-slate-600 rounded-xl text-xs sm:text-sm text-slate-200 transition-all flex items-center justify-between">
+                        <span>${String.fromCharCode(65+idx)}. ${opt}</span>
+                        <i class="fa-regular fa-circle text-slate-400"></i>
+                    </button>
+                `;
+            });
+
+            html += `
+                    </div>
+                    <div id="berlatihNextContainer" class="hidden mt-5 text-right">
+                        <button onclick="nextBerlatihQuestion()" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-sm transition-all shadow-md">
+                            Lanjut ke Soal Berikutnya <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('berlatihContainer').innerHTML = html;
+        }
+
+        function submitExamAnswer(selectedIdx, btnElement) {
+            const q = BERLATIH_DATA[appState.berlatihIndex];
+            const isCorrect = selectedIdx === q.correct;
+            const points = q.level === 1 ? 8 : (q.level === 2 ? 10 : 12);
+
+            // Rekam jawaban siswa untuk laporan database GAS
+            recordAnswer("BERLATIH", q.id, q.q, q.options[selectedIdx], isCorrect);
+
+            if (isCorrect) {
+                if (q.level === 1) appState.scores.l1 += points;
+                if (q.level === 2) appState.scores.l2 += points;
+                if (q.level === 3) appState.scores.l3 += points;
+                appState.scores.total += points;
+                playCorrectSound();
+            } else {
+                playWrongSound();
+            }
+
+            // Disable all options & highlight selected
+            const options = document.querySelectorAll('.exam-option');
+            options.forEach((opt, idx) => {
+                opt.disabled = true;
+                opt.classList.add('cursor-not-allowed', 'opacity-80');
+                if (idx === selectedIdx) {
+                    opt.classList.remove('bg-slate-800', 'border-slate-600', 'hover:bg-slate-700', 'opacity-80');
+                    if (isCorrect) {
+                         opt.classList.add('bg-emerald-900/80', 'border-emerald-500', 'text-emerald-200');
+                         opt.innerHTML = opt.innerHTML.replace('fa-circle text-slate-400', 'fa-circle-check text-emerald-400');
+                    } else {
+                         opt.classList.add('bg-amber-900/80', 'border-amber-500', 'text-amber-200');
+                         opt.innerHTML = opt.innerHTML.replace('fa-circle text-slate-400', 'fa-circle-xmark text-amber-400');
+                    }
+                } else if (idx === q.correct) {
+                    // Also show correct answer if they picked wrong
+                    opt.classList.remove('bg-slate-800', 'border-slate-600', 'hover:bg-slate-700', 'opacity-80');
+                    opt.classList.add('bg-emerald-900/40', 'border-emerald-500/50', 'text-emerald-300');
+                    opt.innerHTML = opt.innerHTML.replace('fa-circle text-slate-400', 'fa-circle-check text-emerald-500/80');
+                }
+            });
+
+            // Show Next Button
+            const nextBtnContainer = document.getElementById('berlatihNextContainer');
+            nextBtnContainer.classList.remove('hidden');
+            if (appState.berlatihIndex === BERLATIH_DATA.length - 1) {
+                nextBtnContainer.querySelector('button').innerHTML = `Lihat Laporan Hasil <i class="fa-solid fa-flag-checkered ml-1"></i>`;
+                nextBtnContainer.querySelector('button').className = "px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold rounded-xl text-sm transition-all shadow-md";
+            }
+        }
+
+        function nextBerlatihQuestion() {
+            if (appState.berlatihIndex < BERLATIH_DATA.length - 1) {
+                appState.berlatihIndex++;
+                renderBerlatihQuestion();
+            } else {
+                // Exam Done -> Show Report
+                showReportScreen();
+            }
+        }
+
+        // ----------------------------------------------------
+        // 9. REPORT & PDF EXPORT GENERATOR
+        // ----------------------------------------------------
+        function showReportScreen() {
+            document.getElementById('berlatihScreen').classList.add('hidden');
+            document.getElementById('berlatihScreen').classList.remove('flex');
+            document.getElementById('reportScreen').classList.remove('hidden');
+            document.getElementById('reportScreen').classList.add('flex');
+
+            // Populate Student Data
+            document.getElementById('rptStudentName').innerText = appState.student.name || "Nama Siswa";
+            document.getElementById('rptStudentClass').innerText = appState.student.class || "Kelas IX";
+            
+            const now = new Date();
+            const dateStr = `${now.getDate()} November ${now.getFullYear()}`;
+            document.getElementById('rptDate').innerText = dateStr;
+            document.getElementById('rptSignDate').innerText = dateStr;
+
+            // Game Accuracy
+            document.getElementById('rptGameScore').innerText = `${appState.bermainScore}/100`;
+
+            // Exam Final Score
+            const finalScore = appState.scores.total;
+            document.getElementById('rptExamScore').innerText = finalScore;
+
+            // Grade Label
+            let grade = "PREDIKAT A (Sangat Baik)";
+            if (finalScore < 75) grade = "PREDIKAT C (Cukup)";
+            else if (finalScore < 88) grade = "PREDIKAT B (Baik)";
+            document.getElementById('rptGradeLabel').innerText = grade;
+
+            // Leveled breakdown
+            document.getElementById('rptL1Score').innerText = `${appState.scores.l1} / 24 Poin`;
+            document.getElementById('rptL2Score').innerText = `${appState.scores.l2} / 40 Poin`;
+            document.getElementById('rptL3Score').innerText = `${appState.scores.l3} / 36 Poin`;
+
+            // HOTS percentage
+            const hotsPct = Math.round((appState.scores.l3 / 36) * 100);
+            document.getElementById('rptHotsScore').innerText = `${hotsPct}%`;
+
+            // Kirim data ke Google Sheets
+            sendResultsToGAS(grade);
+        }
+
+        // Pengiriman data pengerjaan siswa ke Google Apps Script
+        function sendResultsToGAS(gradeLabel) {
+            if (!GAS_URL || GAS_URL === "URL_GAS_ANDA_DISINI") return;
+
+            const totalCorrect = appState.answersRecord.filter(a => a.isCorrect).length;
+            const totalWrong = appState.answersRecord.length - totalCorrect;
+
+            const payload = {
+                action: "saveHasil",
+                studentName: appState.student.name,
+                studentClass: appState.student.class,
+                bermainScore: appState.bermainScore,
+                examScore: appState.scores.total,
+                gradeLabel: gradeLabel,
+                l1Score: appState.scores.l1,
+                l2Score: appState.scores.l2,
+                l3Score: appState.scores.l3,
+                totalCorrect: totalCorrect,
+                totalWrong: totalWrong,
+                answersDetail: appState.answersRecord
+            };
+
+            fetch(GAS_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            }).then(() => {
+                console.log("Data hasil belajar berhasil dikirim ke Google Sheets.");
+            }).catch(err => console.log("Gagal mengirim ke Google Sheets: ", err));
+        }
+
+        function downloadReportPDF() {
+            const element = document.getElementById('pdfPaper');
+            const opt = {
+                margin:       [0.3, 0.3, 0.3, 0.3],
+                filename:     `Laporan_RecountText_${appState.student.name.replace(/\s+/g, '_')}.pdf`,
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, useCORS: true },
+                jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+
+            if (typeof html2pdf !== 'undefined') {
+                html2pdf().set(opt).from(element).save();
+            } else {
+                window.print();
+            }
+        }
+    </script>
+</body>
+</html>
